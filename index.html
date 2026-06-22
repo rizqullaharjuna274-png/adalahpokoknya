@@ -155,18 +155,18 @@
         }
 
         /* MENU 2: LOVE NOTES */
-        .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .notes-grid { display: flex; flex-direction: column; gap: 15px; }
         .note-item {
-            padding: 15px; border-radius: 12px; font-size: 0.85rem; box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            font-weight: 500; min-height: 110px; display: flex; align-items: center; justify-content: center; text-align: center;
-            position: relative;
+            padding: 20px; border-radius: 15px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(116, 185, 255, 0.1);
+            font-weight: 500; min-height: 90px; display: flex; align-items: center; justify-content: center; text-align: center;
+            position: relative; line-height: 1.5;
         }
-        .n1 { background-color: #e3f2fd; border-top: 4px solid #74b9ff; }
-        .n2 { background-color: #ffffff; border-top: 4px solid #0984e3; border: 1px solid #e3f2fd; }
+        .n1 { background-color: #e3f2fd; border-left: 5px solid #74b9ff; color: #0b3c5d; }
+        .n2 { background-color: #ffffff; border-left: 5px solid #0984e3; border: 1px solid #e3f2fd; color: #2c3e50; }
 
         /* MENU 3: SURPRISE */
         .surprise-box { background: white; border-radius: 20px; padding: 40px 20px; text-align: center; border: 2px dashed #74b9ff; }
-        #secret-message { display: none; margin-top: 20px; font-size: 0.95rem; color: #0984e3; line-height: 1.6; background: #e3f2fd; padding: 15px; border-radius: 10px; }
+        #secret-message { display: none; margin-top: 20px; font-size: 0.95rem; color: #2c3e50; line-height: 1.6; background: #e3f2fd; padding: 20px; border-radius: 12px; text-align: left; border: 1px solid #b3e5fc; }
 
         /* BUTTONS */
         .main-btn {
@@ -259,7 +259,7 @@
                     <div class="img-wrapper"><img src="momen6.jpeg" alt="Momen 6"></div>
                     <div class="slide-info">
                         <span class="slide-number">Momen 6</span>
-                        <p>jujurrr pas bukber dirumahnya lutpi ajunn salting teruss garagara tataa bilang rambut ajun bagus terus tataa sukaa :)</p>
+                        <p>jujurrr pas bukber dirumahnya lutpi ajunn salting teruss garagara tataa billing rambut ajun bagus terus tataa sukaa :)</p>
                     </div>
                 </div>
 
@@ -316,63 +316,6 @@
         <section id="notes" class="menu-section">
             <h2 class="section-title">Love Notes</h2>
             <div class="notes-grid">
-                <div class="note-item n1">"Makasih udah hadir dan jadi bagian paling indah di hidup aku, Ta. 💙"</div>
-                <div class="note-item n2">"Jangan bosen-bosen dengerin cerita random Ajun ya!"</div>
-                <div class="note-item n1">"Kamu itu moodbooster terbaik yang pernah ada. 🥰"</div>
-                <div class="note-item n2">"I love you more than you'll ever know, Tata."</div>
-            </div>
-        </section>
-
-        <section id="surprise" class="menu-section">
-            <h2 class="section-title">A Special Surprise</h2>
-            <div class="surprise-box">
-                <div class="lock-icon" id="box-icon" style="font-size: 3rem; margin-bottom: 15px; animation: pulse 1.5s infinite;">🔒</div>
-                <button class="main-btn" id="btn-surprise" onclick="unlockSurprise()">💙 Unlock Surprise</button>
-                
-                <div id="secret-message">
-                    <strong>Hai Tata Cantik! 🥰</strong><br>
-                    Website ini sengaja Ajun bikin khusus buat Tata. Dari yang awalnya cuma balesan panik di status WA, sekarang malah jadi orang yang paling berharga buat aku. Makasih ya udah nemenin aku melewati 12 momen seru di atas dan momen-momen lainnya. Tetap sama-sama terus ya! 💙
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <script>
-        function openScrapbook() {
-            document.getElementById('landing-page').style.transform = 'translateY(-100%)';
-            setTimeout(() => {
-                document.getElementById('landing-page').style.display = 'none';
-                document.getElementById('navbar').style.display = 'flex';
-                document.getElementById('main-content').style.display = 'block';
-            }, 800);
-            setInterval(createHeart, 300);
-        }
-
-        function switchMenu(menuId, element) {
-            document.querySelectorAll('.menu-section').forEach(sec => sec.classList.remove('active-section'));
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            document.getElementById(menuId).classList.add('active-section');
-            element.classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function unlockSurprise() {
-            document.getElementById('box-icon').innerHTML = '🎁';
-            document.getElementById('box-icon').style.animation = 'none';
-            document.getElementById('secret-message').style.display = 'block';
-            document.getElementById('btn-surprise').style.display = 'none';
-        }
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-fall');
-            heart.innerText = ['💙', '🤍', '✨'][Math.floor(Math.random() * 3)];
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
-    </script>
-</body>
-</html>
+                <div class="note-item n1">"maacii yaa tataa udaa hadir dan jadi bagian paling indah di hidup ajunn :)"</div>
+                <div class="note-item n2">"tiap ajunn denger suara tataa atau main sama tataa kaya semua beban yang tadinya duar duara jadi langsung ilang semuaa hehe"</div>
+                <div class="note-item n1">"pokoknya
