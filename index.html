@@ -207,11 +207,11 @@
             <div class="story-card">
                 <span class="story-date">📅 First Chat</span>
                 <h3>Awal Mula Cerita Kita</h3>
-                <p>Semuanya berawal dari sini. Obrolan random yang ternyata jadi awal dari perjalanan panjang kita berdua. 😂</p>
+                <p>Semuanya berawal dari sini,pembahasan random jadi keterusan ampe sekarangg 😭</p>
                 <img src="first_chat.jpeg" alt="Screenshot First Chat WA" class="chat-screenshot">
             </div>
 
-            <h3 style="font-size: 1.2rem; margin: 30px 0 5px 5px; color: #2c3e50; font-weight: 600;">Momen Spesial Kita 💙</h3>
+            <h3 style="font-size: 1.2rem; margin: 30px 0 5px 5px; color: #2c3e50; font-weight: 600;">Momen Spesial ajunn dan tataa💙</h3>
             <p style="font-size: 0.75rem; color: #b2bec3; margin-bottom: 15px; margin-left: 5px;">(Geser kesamping ya Ta! 👉)</p>
             
             <div class="slider-container">
@@ -318,4 +318,61 @@
             <div class="notes-grid">
                 <div class="note-item n1">"maacii yaa tataa udaa hadir dan jadi bagian paling indah di hidup ajunn :)"</div>
                 <div class="note-item n2">"tiap ajunn denger suara tataa atau main sama tataa kaya semua beban yang tadinya duar duara jadi langsung ilang semuaa hehe"</div>
-                <div class="note-item n1">"pokoknya
+                <div class="note-item n1">"pokoknya jangan pernaa bosen dengerin cerita ajunn yaa hehee"</div>
+                <div class="note-item n2">"I love you more than you'il ever knoww,tataaa :)"</div>
+            </div>
+        </section>
+
+        <section id="surprise" class="menu-section">
+            <h2 class="section-title">A Special Surprise</h2>
+            <div class="surprise-box">
+                <div class="lock-icon" id="box-icon" style="font-size: 3rem; margin-bottom: 15px; animation: pulse 1.5s infinite;">🔒</div>
+                <button class="main-btn" id="btn-surprise" onclick="unlockSurprise()">💙 Unlock Surprise</button>
+                
+                <div id="secret-message">
+                    <strong>Hai Tata Cantik! 🥰</strong><br><br>
+                    web ini sengaja ajunn bikin buat tataa biar bisa diliat terus sampe kapan ajaa hehe,dari yang awalnya cuma balesan chat kamu yang "meninggal?" sekarangg malah jadi orang yang berharga banget buat ajunn,maacii yaa udaa nemenin ajun lewatin 12 momen seluu ituuu sama momen momen lainnyaaa mwehehe,lopyuuuu tataaa❤️❤️
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function openScrapbook() {
+            document.getElementById('landing-page').style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                document.getElementById('landing-page').style.display = 'none';
+                document.getElementById('navbar').style.display = 'flex';
+                document.getElementById('main-content').style.display = 'block';
+            }, 800);
+            setInterval(createHeart, 300);
+        }
+
+        function switchMenu(menuId, element) {
+            document.querySelectorAll('.menu-section').forEach(sec => sec.classList.remove('active-section'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            document.getElementById(menuId).classList.add('active-section');
+            element.classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function unlockSurprise() {
+            document.getElementById('box-icon').innerHTML = '🎁';
+            document.getElementById('box-icon').style.animation = 'none';
+            document.getElementById('secret-message').style.display = 'block';
+            document.getElementById('btn-surprise').style.display = 'none';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-fall');
+            heart.innerText = ['💙', '🤍', '✨'][Math.floor(Math.random() * 3)];
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+    </script>
+</body>
+</html>
